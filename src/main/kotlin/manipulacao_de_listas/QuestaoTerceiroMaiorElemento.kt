@@ -1,7 +1,10 @@
 package manipulacao_de_listas
 
+import java.util.Scanner
 fun main(){
-    val listaL = listOf(1,23,14,11,56,76,33,89,12,132,678,2132,78,33,123,999)
+    val listaL = mutableListOf<Int>()
+
+    addToList(listaL) //adiciona os itens na lista
 
     val listaMerge = mergeSort(listaL)
 
@@ -10,7 +13,7 @@ fun main(){
     println("Essa foi a lista utilizada: $listaMerge")
     println("O terceiro maior elemento dessa lista é: $terceiroMaiorElemento")
 }
-fun mergeSort(lista: List<Int>): List<Int> {
+fun mergeSort(lista: MutableList<Int>): MutableList<Int> {
     if (lista.size <= 1) {
         return lista
     }
@@ -22,7 +25,7 @@ fun mergeSort(lista: List<Int>): List<Int> {
     return merge(mergeSort(esquerda), mergeSort(direita))
 }
 
-fun merge(esquerda: List<Int>, direita: List<Int>): List<Int> {
+fun merge(esquerda: MutableList<Int>, direita: MutableList<Int>): MutableList<Int> {
     val listaFinal = mutableListOf<Int>()
     var indiceEsquerda = 0
     var indiceDireita = 0
@@ -41,4 +44,15 @@ fun merge(esquerda: List<Int>, direita: List<Int>): List<Int> {
     listaFinal.addAll(direita.subList(indiceDireita, direita.size))
 
     return listaFinal
+}
+
+fun addToList(lista: MutableList<Int>){
+    val scanner = Scanner(System.`in`)
+    println("Escolha o tamanho da lista: ")
+    val tamLista: Int = scanner.nextInt()
+
+    println("Escolha todos os $tamLista itens para a lista 1:")
+    while (lista.size<tamLista){
+        lista.add(scanner.nextInt())
+    }
 }

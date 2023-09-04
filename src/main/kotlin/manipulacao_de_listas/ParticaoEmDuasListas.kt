@@ -22,7 +22,7 @@ fun main(){
         lista2.add(scanner.nextInt())
     }
 
-    val listaTotal = mergeSort(lista1+lista2).toMutableList() //utiliza o mergeSort usado no código anterior
+    val listaTotal = mergeSort((lista1+lista2).toMutableList()) //utiliza o mergeSort usado no código anterior
     //divide a lista novamente
     lista1 = listaTotal.subList(0, listaTotal.size / 2 ) //verificar outras formas de fazer a divisão do array, já que provavelmente essa não será uma resposta válida
     lista2 = listaTotal.subList(listaTotal.size / 2, listaTotal.size)
