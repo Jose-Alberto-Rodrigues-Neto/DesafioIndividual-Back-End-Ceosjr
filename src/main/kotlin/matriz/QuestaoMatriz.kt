@@ -4,7 +4,7 @@ import java.io.File
 import java.io.FileNotFoundException
 
 fun main() {
-   ler() //utilize C:/Users/alber/IdeaProjects/CeosProcessoSeletivo/out/production/CeosProcessoSeletivo/lista.txt
+   ler() //utilize o caminho "absoluto" para o arquivo matrz!
 }
 
 //seleciona o arquivo a ser lido e então chama as funções necessárias para printar o arquivo
@@ -40,7 +40,6 @@ fun printarFile(linhaLida: String) {
         }
         listaComparacao.add("\n")
     }
-    println(listaComparacao) //printa a matriz lida
     printMatrizToInt(listaComparacao) //tirar uma dúvida em relação a questão de ter que imprimir inteiros
 }
 
