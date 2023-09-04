@@ -3,6 +3,8 @@ package manipulacao_de_listas
 import java.util.Scanner
 
 fun main(){
+    val comecoCodigo = System.currentTimeMillis()
+
     var lista1 = mutableListOf<Int>()
     var lista2 = mutableListOf<Int>()
 
@@ -29,4 +31,9 @@ fun main(){
 
 
     println("A lista 1 ($lista1) sempre terá itens menores que a lista 2 ($lista2)!")
+    scanner.close()
+    val fimCodigo = System.currentTimeMillis()
+    val tempoDeExecucao = fimCodigo - comecoCodigo
+    println("Tempo de execução: $tempoDeExecucao milissegundos")
+
 }

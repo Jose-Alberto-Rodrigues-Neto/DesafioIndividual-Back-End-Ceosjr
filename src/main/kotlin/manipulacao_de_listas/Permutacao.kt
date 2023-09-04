@@ -1,11 +1,10 @@
 package manipulacao_de_listas
 
-import java.util.Scanner
 fun main(){
-    val listaL1 = mutableListOf<Int>()
-    val listaL2 = mutableListOf<Int>()
+    val comecoCodigo = System.currentTimeMillis()
 
-    addToPermutacao(listaL1, listaL2) //adiciona valores escolhidos pelo usuário as duas listas
+    val listaL1 = mutableListOf(12,11,22,14)
+    val listaL2 = mutableListOf(22,14,11,12)
 
     val listaOrdenada1 = mergeSort(listaL1) //função que foi criada em outro arquivo, mas do mesmo pacote
     val listaOrdenada2 = mergeSort(listaL2)
@@ -19,18 +18,9 @@ fun main(){
         println("Isso não é uma permutação da lista $listaL1 e da lista $listaL2")
     }
 
-}
+    //avaliando o tempo da execução
+    val fimCodigo = System.currentTimeMillis()
+    val tempoDeExecucao = fimCodigo - comecoCodigo
 
-fun addToPermutacao(lista1: MutableList<Int>, lista2: MutableList<Int>){
-    println("Escolha o tamanho que as duas listas devem ter:")
-    val readInt = Scanner(System.`in`)
-    val tamLista = readInt.nextInt()
-    println("Agora escreva os valores da lista L1:")
-    while (lista1.size<tamLista){
-        lista1.add(readInt.nextInt())
-    }
-    println("Agora escreva os valores da lista L2:")
-    while (lista2.size<tamLista){
-        lista2.add(readInt.nextInt())
-    }
+    println("Tempo de execução: $tempoDeExecucao milissegundos")
 }

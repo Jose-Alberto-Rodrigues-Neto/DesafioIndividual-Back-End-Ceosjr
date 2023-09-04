@@ -2,6 +2,8 @@ package manipulacao_de_listas
 
 import java.util.Scanner
 fun main(){
+    val comecoCodigo = System.currentTimeMillis()
+
     val listaL = mutableListOf<Int>()
 
     addToList(listaL) //adiciona os itens na lista
@@ -12,6 +14,12 @@ fun main(){
 
     println("Essa foi a lista utilizada: $listaMerge")
     println("O terceiro maior elemento dessa lista é: $terceiroMaiorElemento")
+
+    //avaliando o tempo da execução
+    val fimCodigo = System.currentTimeMillis()
+    val tempoDeExecucao = fimCodigo - comecoCodigo
+
+    println("Tempo de execução: $tempoDeExecucao milissegundos")
 }
 fun mergeSort(lista: MutableList<Int>): MutableList<Int> {
     if (lista.size <= 1) {
@@ -55,4 +63,5 @@ fun addToList(lista: MutableList<Int>){
     while (lista.size<tamLista){
         lista.add(scanner.nextInt())
     }
+    scanner.close()
 }
